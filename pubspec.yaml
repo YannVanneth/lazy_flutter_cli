@@ -12,14 +12,19 @@ environment:
 executables:
   lazy: lazy
   lazy_cli: lazy
+  lazy_flutter: lazy
+  flutter_lazy: lazy
+  flutter-lazy: lazy
+
 
 dependencies:
-  args: ^2.4.2
-  mason_logger: ^0.2.14
-  path: ^1.9.0
+  args: ^2.6.0
+  mason_logger: ^0.3.5
+  path: ^1.9.1
   recase: ^4.1.0
-  yaml: ^3.1.2
+  yaml: ^3.1.3
 
 dev_dependencies:
   flutter_lints: ^6.0.0
   test: ^1.26.0
+

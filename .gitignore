@@ -6,6 +6,7 @@ pubspec.lock
 
 # IDE & OS
 .idea/
-.vscode/
 *.iml
 .DS_Store
+config.bat
+node_modules

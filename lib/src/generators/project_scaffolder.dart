@@ -128,26 +128,26 @@ class ApiClient {
     buffer.writeln('  cupertino_icons: ^1.0.8');
 
     if (config.stateManagement == StateManagement.bloc) {
-      buffer.writeln('  flutter_bloc: ^8.1.6');
+      buffer.writeln('  flutter_bloc: ^9.0.0');
     } else if (config.stateManagement == StateManagement.riverpod) {
-      buffer.writeln('  flutter_riverpod: ^2.5.1');
+      buffer.writeln('  flutter_riverpod: ^2.6.1');
     } else if (config.stateManagement == StateManagement.provider) {
       buffer.writeln('  provider: ^6.1.2');
     } else if (config.stateManagement == StateManagement.getx) {
-      buffer.writeln('  get: ^4.6.6');
+      buffer.writeln('  get: ^4.7.2');
     }
 
     if (config.router == AppRouter.goRouter) {
-      buffer.writeln('  go_router: ^14.2.0');
+      buffer.writeln('  go_router: ^14.8.0');
     } else if (config.router == AppRouter.autoRoute) {
-      buffer.writeln('  auto_route: ^9.0.0');
+      buffer.writeln('  auto_route: ^10.0.1');
     }
 
     if (config.useDio) {
-      buffer.writeln('  dio: ^5.5.0');
+      buffer.writeln('  dio: ^5.8.0');
     }
     if (config.useGetIt) {
-      buffer.writeln('  get_it: ^7.7.0');
+      buffer.writeln('  get_it: ^8.0.3');
     }
     if (config.useLazyAssetGenerator) {
       buffer.writeln('  lazy_asset_generator: ^1.4.1');
@@ -156,10 +156,10 @@ class ApiClient {
     buffer.writeln('\ndev_dependencies:');
     buffer.writeln('  flutter_test:');
     buffer.writeln('    sdk: flutter');
-    buffer.writeln('  flutter_lints: ^5.0.0');
+    buffer.writeln('  flutter_lints: ^6.0.0');
 
     if (config.useLazyAssetGenerator) {
-      buffer.writeln('  build_runner: ^2.4.13');
+      buffer.writeln('  build_runner: ^2.4.15');
     }
 
     buffer.writeln('\nflutter:');

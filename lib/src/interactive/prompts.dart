@@ -1,10 +1,14 @@
 import 'package:mason_logger/mason_logger.dart';
 import '../models/project_config.dart';
+import 'terminal_selector.dart';
 
 class InteractivePrompts {
   final Logger logger;
+  late final TerminalSelector _selector;
 
-  InteractivePrompts(this.logger);
+  InteractivePrompts(this.logger) {
+    _selector = TerminalSelector(logger);
+  }
 
   ProjectConfig promptUser({String? initialName}) {
     logger.info('');
@@ -22,8 +26,8 @@ class InteractivePrompts {
     name = name.trim().replaceAll('-', '_');
 
     // 2. Architecture Selection
-    final archIndex = logger.chooseOne<String>(
-      '✔ Which architecture pattern would you like to use?',
+    final archIndex = _selector.selectOne(
+      message: 'Which architecture pattern would you like to use?',
       choices: [
         'Clean Architecture (Data / Domain / Presentation)',
         'MVVM (Model - View - ViewModel)',
@@ -39,8 +43,8 @@ class InteractivePrompts {
             : Architecture.featureFirst;
 
     // 3. State Management Selection
-    final stateIndex = logger.chooseOne<String>(
-      '✔ Which state management solution would you like to use?',
+    final stateIndex = _selector.selectOne(
+      message: 'Which state management solution would you like to use?',
       choices: [
         'Flutter BLoC / Cubit',
         'Riverpod',
@@ -59,8 +63,8 @@ class InteractivePrompts {
                 : StateManagement.getx;
 
     // 4. Routing Solution Selection
-    final routerChoice = logger.chooseOne<String>(
-      '✔ Which routing solution would you like to use?',
+    final routerChoice = _selector.selectOne(
+      message: 'Which routing solution would you like to use?',
       choices: [
         'GoRouter',
         'AutoRoute',
@@ -76,23 +80,23 @@ class InteractivePrompts {
             : AppRouter.standard;
 
     // 5. Feature Toggles
-    final useDio = logger.confirm(
-      '✔ Would you like to include Dio network client & interceptors?',
+    final useDio = _selector.confirm(
+      message: 'Would you like to include Dio network client & interceptors?',
       defaultValue: true,
     );
 
-    final useLazyAssetGenerator = logger.confirm(
-      '✔ Would you like to include lazy_asset_generator for type-safe assets?',
+    final useLazyAssetGenerator = _selector.confirm(
+      message: 'Would you like to include lazy_asset_generator for type-safe assets?',
       defaultValue: true,
     );
 
-    final useGetIt = logger.confirm(
-      '✔ Would you like to include GetIt dependency injection?',
+    final useGetIt = _selector.confirm(
+      message: 'Would you like to include GetIt dependency injection?',
       defaultValue: true,
     );
 
-    final useStrictLints = logger.confirm(
-      '✔ Would you like to enable strict Flutter lints?',
+    final useStrictLints = _selector.confirm(
+      message: 'Would you like to enable strict Flutter lints?',
       defaultValue: true,
     );
 
@@ -108,3 +112,4 @@ class InteractivePrompts {
     );
   }
 }
+
