@@ -1,0 +1,25 @@
+name: lazy_flutter_cli
+description: >
+  An interactive Next.js-style CLI tool for Flutter developers to scaffold project structures
+  (Clean Architecture, MVVM) with BLoC, Riverpod, Provider, and generate feature modules instantly.
+version: 1.0.0
+homepage: https://github.com/YannVanneth/lazy_flutter_cli
+repository: https://github.com/YannVanneth/lazy_flutter_cli
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+executables:
+  lazy: lazy
+  lazy_cli: lazy
+
+dependencies:
+  args: ^2.4.2
+  mason_logger: ^0.2.14
+  path: ^1.9.0
+  recase: ^4.1.0
+  yaml: ^3.1.2
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  test: ^1.26.0
