@@ -90,7 +90,7 @@ class CreateCommand extends Command<int> {
     }
 
     final scaffolder = ProjectScaffolder(logger);
-    await scaffolder.scaffold(config);
-    return ExitCode.success.code;
+    final didScaffold = await scaffolder.scaffold(config);
+    return didScaffold ? ExitCode.success.code : ExitCode.software.code;
   }
 }

@@ -14,10 +14,11 @@ An interactive, Next.js-style command-line tool (`lazy` / `lazy_flutter` / `flut
 
 - 🎨 **Clack-Style In-Place Interactive UI**: Clean terminal questionnaire with smooth in-place option redrawing (`lazy create`).
 - 🏗️ **Multiple Architectures**: Clean Architecture (Data / Domain / Presentation), MVVM, or Feature-First.
-- ⚡ **State Management**: BLoC / Cubit (`^9.0.0`), Riverpod (`^2.6.1`), Provider (`^6.1.2`), or GetX (`^4.7.2`).
-- 🛣️ **Modern Routing**: GoRouter (`^14.8.0`), AutoRoute (`^10.0.1`), or Standard Navigator 2.0.
+- ⚡ **State Management**: BLoC / Cubit, Riverpod, Provider, or GetX with versions resolved at creation time.
+- 🛣️ **Modern Routing**: GoRouter, AutoRoute, or Standard Navigator 2.0 with versions resolved at creation time.
 - 🧩 **Instant Feature Generation**: `lazy g feature <name>` generates data, domain, and presentation layers in seconds.
-- 🛠️ **Pre-Configured Stack**: Integrates Dio (`^5.8.0`), `lazy_asset_generator` (`^1.4.1`), GetIt (`^8.0.3`), and strict lints (`^6.0.0`).
+- 🛠️ **Pre-Configured Stack**: Integrates Dio, `lazy_asset_generator`, GetIt, and strict lints using the latest SDK-compatible versions.
+- 🧑‍💻 **Developer-Ready Projects**: Generates linting, starter tests, VS Code settings, `.gitignore`, and a one-command quality check.
 - 💡 **Flexible Executable Aliases**: Run using `lazy`, `lazy_flutter`, `flutter_lazy`, `flutter-lazy`, or set up `flutter lazy`.
 
 ---
@@ -167,9 +168,16 @@ my_awesome_app/
 │   │       ├── domain/
 │   │       └── presentation/
 │   └── main.dart
+├── analysis_options.yaml
+├── test/widget_test.dart
+├── tool/verify.dart
+├── .vscode/
 ├── pubspec.yaml
 └── README.md
 ```
+
+Run `dart run tool/verify.dart` inside the generated project to format, analyze,
+and test it in one command.
 
 ---
 
