@@ -1,3 +1,10 @@
+## 1.1.0
+- Resolve the latest Flutter/Dart SDK-compatible package versions during `lazy create`.
+- Show dependency progress and actionable errors when package resolution fails.
+- Clean up incomplete newly-created projects after failed setup.
+- Generate linting, starter widget tests, VS Code configuration, `.gitignore`, and `tool/verify.dart`.
+- Add a one-command developer workflow for formatting, analysis, and tests.
+
 ## 1.0.0
 - Initial release of `lazy_flutter_cli`.
 - Interactive Next.js-style project creation (`lazy create`).
